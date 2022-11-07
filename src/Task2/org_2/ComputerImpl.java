@@ -2,11 +2,8 @@ package org_2;
 
 public abstract class ComputerImpl
 {
-    String maker;
-    String model;
+    String processor, RAM, hard;
 
-    //так мы избавляемся от дублирующего кода
-    //в дальнейшем, все что нам нужно - переопределить метод toString
     public String turnOn() {
         return "Turn on "+getClass().getSimpleName()+" "+toString();
     }
@@ -17,5 +14,11 @@ public abstract class ComputerImpl
 
     public String connect() {
         return "Connect to internet "+getClass().getSimpleName()+" "+toString();
+    }
+
+    public String toString() {
+        return "Процессор: " + processor + "\n" +
+                "Оперативная память: " + RAM + "\n" +
+                "Жесткий диск: " + hard + "\n";
     }
 }
